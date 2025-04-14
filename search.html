@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/search.css">
+    <title>Search Results</title>
+  </head>
+  <body>
+    <div class="nav-2">
+        <p>Shop At <a class="nav-2-href" href="#">ShopEasy Store</a></p>
+        <div class="nav-2-logo">
+            <img src="/images/Shop Easy logo.png" alt="">
+            <p class="nav-2-href2">Shop Easy</p>
+        </div>
+    </div>
+
+    <div class="nav-3">
+        <img onclick= "location.href='/Home-Page.html'" class="logo" src="/images/Shop Easy logo.png" alt="">
+
+        <div class="input-cont">
+            <div class="input">
+                <img src="/images/search-icon.png" alt="">
+                <input id="input" class="search-bar" placeholder="Search products, brands & categories..." type="text">
+            </div>
+
+            <button id="btn" onclick="searchProduct()" class='top-search-btn'>Search</button>
+        </div>
+
+        <div class="top-menu">
+            <div>
+                <img onclick= "location.href='/Login-Page.html'" class='nav-3-icon' src="/images/acc-icon.png" alt="">
+                <a href="/Login-Page.html">Account<select class="top-sel"></select></a>
+                
+            </div>
+            <div>
+                <img onclick= "location.href='/Help-Page.html'" class='nav-3-icon' src="/images/help-icon.png" alt="">
+                <a href="/Help-Page.html">Help<select class="top-sel"></select></a>
+                
+            </div>
+            <div>
+                <img onclick= "location.href='/Cart-Page.html'" class="nav-3-icon" src="/images/cart-icon.png" alt="">
+                <a href="/Cart-Page.html">Cart</a>
+            </div>
+        </div>
+    </div>
+    <div class="down">
+        <h1>Search Results</h1>
+        <p>Showing results for: <span id="searchQuery"></span></p>
+    </div>
+
+    <div class="products-container" id="productList"></div>
+    
+    <script>
+      const products = [
+        {
+          image: "/product-images/p1e.jpg",
+          name: "External Storage",
+          price: 20000,
+          discountedPrice: 25000,
+        },
+        {
+          image: "/product-images/p5e.jpg",
+          name: "JBL Bluetooth Speaker",
+          price: 150200,
+          category: "Electronic",
+          discountedPrice: 200000,
+        },
+        {
+          image: "/product-images/p1f.jpg",
+          name: "Super-Fast Original Type-C Cable",
+          price: 2899,
+          discountedPrice: 3700,
+        },
+        {
+          image: "/product-images/p2b.jpg",
+          name: "Digital Screen Glasses",
+          price: 150200,
+          discountedPrice: 200000,
+        },
+        {
+          image: "/product-images/p2f.jpg",
+          name: "Portable Camera With StandStick",
+          price: 150200,
+          discountedPrice: 200000,
+        },
+        {
+          image: "/product-images/p2d.jpg",
+          name: "ear bud+ Original ",
+          price: 150200,
+          discountedPrice: 200000,
+        },
+        {
+          image: "/product-images/p3a.jpg",
+          name: "Kitchin Spoon Set",
+          price: 150200,
+          discountedPrice: 200000,
+        },
+        {
+            image: "/product-images/p1f.jpg",
+          name: "Super-Fast Original Type-C Cable",
+          price: 2899,
+          discountedPrice: 3700,  
+        },
+        {
+            image: "/product-images/p4e.jpg",
+          name: "Inspire Perfume Fragrance",
+          price: 17800,
+          discountedPrice: 25000, 
+        },
+        {
+            image: "/product-images/p4f.jpg",
+          name: "Declan Mein Draft Chelsea",
+          price: 17899,
+          discountedPrice: 29700, 
+        },
+        {
+            image: "/product-images/p5b.jpg",
+          name: "Projector For Phone",
+          price: 28200,
+          discountedPrice: 33600, 
+        },
+        {
+            image: "/product-images/p1f.jpg",
+          name: "Super-Fast Original Type-C Cable",
+          price: 2899,
+          discountedPrice: 3700, 
+        },
+        {
+            image: "/product-images/p5c.jpg",
+          name: "LG Flat-Screen UHD Led TV",
+          price: 65000,
+          discountedPrice: 78600, 
+        },
+        {
+            image: "/product-images/p5f.jpg",
+          name: "Loud Bass Conner Speaker",
+          price: 39700,
+          discountedPrice: 30000, 
+        },
+        {
+            image: "/product-images/p6a.jpg",
+          name: "Modern High-Hills",
+          price: 19300,
+          discountedPrice: 16500, 
+        },
+        {
+            image: "/product-images/p6b.jpg",
+          name: "Black Leather Lady Hand Bag",
+          price: 18200,
+          discountedPrice: 14900, 
+        },
+        {
+            image: "/product-images/p6c.jpg",
+          name: "Couple Pair Chain",
+          price: 7600,
+          discountedPrice: 5200, 
+        },
+        {
+            image: "/product-images/p6d.jpg",
+          name: "Pair Ring & Chain",
+          price: 37021,
+          discountedPrice: 30000, 
+        },
+        {
+            image: "/product-images/p6e.jpg",
+          name: "Elegant Boss Lady Mini",
+          price: 25000,
+          discountedPrice: 17800, 
+        },
+        {
+            image: "/product-images/p6f.jpg",
+          name: "Gold Dollar Cuban Chain",
+          price: 150700,
+          discountedPrice: 125899, 
+        },
+        {
+            image: "/product-images/p6c.jpg",
+          name: "Couple Pair Chain",
+          price: 7600,
+          discountedPrice: 5200, 
+        },
+        {
+            image: "/product-images/p6c.jpg",
+          name: "Couple Pair Chain",
+          price: 7600,
+          discountedPrice: 5200, 
+        },
+        {
+            image:"/product-images/p5d.jpg",
+            name: "Sitting Room Leather Chair",
+            price: 98000,
+            discountedPrice: 70000,
+        },
+        {
+          image: "/product-images/p36.jpg",
+          name: "Stuck Pot",
+          price: 150200,
+          discountedPrice: 200000,
+        },
+        {
+          image: "/product-images/p3d.jpg",
+          name: "Manual Blender",
+          price: 150200,
+          discountedPrice: 200000,
+        },
+        {
+          image: "/product-images/p3e.jpg",
+          name: "Toaster & Coffee Making Machine",
+          price: 150200,
+          discountedPrice: 200000,
+        },
+        {
+          image: "/product-images/p4a.jpg",
+          name: "Digital Z Watch",
+          price: 20500,
+          discountedPrice: 23300,
+        },
+        {
+            image: "/product-images/p1a.jpg",
+          name: "Samsung Z-Fold Screen Protection",
+          price: 10000,
+          discountedPrice: 15500, 
+        },
+        {
+            image: "/product-images/p1b.jpg",
+          name: "All-in-one External Storage USB",
+          price: 20000,
+          discountedPrice: 25000,
+        },
+        {
+          image: "/product-images/p3e.jpg",
+          name: "Beard Balm Hair Cream",
+          price: 5900,
+          discountedPrice: 10200,
+        },
+        {
+          image: "/product-images/p4f.jpg",
+          name: "Men's Winter Wear",
+          price: 10200,
+          discountedPrice: 17600,
+        },
+        {
+          image: "/product-images/p4d.jpg",
+          name: "Silver Crest 2L Industrial",
+          price: 24000,
+          discountedPrice: 27021,
+        },
+        {
+          image: "/product-images/p3e.jpg",
+          name: "Inspire Perfume Fragrance",
+          price: 17800,
+          discountedPrice: 25000,
+        },
+      ];
+
+      function getQueryParam(param) {
+        let urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+
+      function displaySearchResults() {
+        let query = getQueryParam("query");
+        document.getElementById("searchQuery").textContent = query;
+
+        let filteredProducts = products.filter((product) =>
+          product.name.toLowerCase().includes(query)
+        );
+
+        let productList = document.getElementById("productList");
+        productList.innerHTML = "";
+
+        if (filteredProducts.length > 0) {
+          filteredProducts.forEach((product) => {
+            let productCard = document.createElement("div");
+            productCard.classList.add("product-card");
+
+            productCard.innerHTML = `
+                        <img src="${product.image}" alt="${
+              product.name
+            }" class="product-image">
+                        <div class="product-name">${product.name}</div>
+                        <div class="product-price">₦${
+                          product.discountedPrice
+                        }</div>
+                        <div class="discounted-price">₦${product.price}</div>
+                        <div class="rating">${"⭐".repeat(
+                          Math.round(product.rating)
+                        )}</div>
+                    `;
+
+            productList.appendChild(productCard);
+          });
+        } else {
+          productList.innerHTML =
+            "<p style='text-align:center;'>No products found.</p>";
+        }
+      }
+
+      displaySearchResults();
+    </script>
+  </body>
+</html>

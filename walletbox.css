@@ -1,0 +1,220 @@
+*{
+    /* border: 1px solid black; */
+    
+}
+body{
+    background-color:#e0d0b3;
+}
+.walletbox{
+    border-style: ridge;
+    border-width: 7px;
+    border-color: rgb(140, 134, 134);
+    border-radius: 15px;
+    background-color:#f8f4ec;
+
+    width: 40vw;
+    height: 100vh;
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    margin-top: 50px;
+
+}
+
+.innerwall1 {
+    /* border: 2px solid red; */
+    height: 10vh;
+    width:80%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.innimg1>img{
+    height: 20px;
+}
+.innimg1{
+    border:none;
+    background-color:white;
+    border-radius: 10px;
+    width: 15%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.mid1{
+    
+    width: 60%;
+}
+.mid1>p{
+    text-align: center;
+    font-family: Roboto;
+    font-size:x-large;
+    font-weight: 700;
+}
+
+
+
+
+.innerwall2 {
+    /* border: 2px solid red; */
+    border-radius: 10px;
+    height: 20vh;
+    width:80%;
+}
+.innerwall2>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+
+
+
+.innerwall3 {
+    /* border: 2px solid red; */
+    height: 10vh;
+    width:80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin:none;
+    padding: none;    
+}
+.innerwall3>p{
+    margin: 0%;
+    font-family: Roboto,Jost;
+    font-weight: 500;
+
+}
+
+.amaBody{
+    height: 65%;
+    display: flex;
+    background-color:white;
+    border-radius: 10px;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.amabox1{
+    width: 70%;
+    height: 80%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+}
+.amabox1>img{
+    height: 70%;
+}
+.amabox2{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin: 0%;
+}
+.amabox2>h3{
+    margin: 0%;
+    font-family: Roboto,Jost;
+}
+
+.amabox2>p{
+    margin: 0%;
+    font-family: Roboto,Jost;
+
+}
+.amaBody>div>input{
+    
+}
+
+
+
+.innerwall4 {
+    /* border: 2px solid red; */
+    background-color: white;
+    border-radius: 10px;
+    height: 10vh;
+    width:80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.money{
+margin-left: 10px;
+font-family: Roboto;
+}
+.money1{
+    margin-right: 10px ;
+}
+.money1>img{
+    height: 50px;
+}
+
+
+.innerwall5 {
+    
+    height: 20vh;
+    width:80%; 
+    display: flex;  
+    flex-direction: column;
+    font-family: Roboto,Jost;
+    font-weight: 500;
+}
+.flow1{
+    display: flex;
+    gap: 30px;
+}
+
+.flow2{
+    margin-top: 50px;
+}
+
+.valid, .cvv{
+    width: 45%;
+}
+.valid>p, .cvv>p, .flow2>p {
+    margin: 0%;
+}
+.valid>input , .cvv>input , .flow2>input{
+padding: 5px;
+border: 2px dashed rgba(133, 128, 128, 0.197);
+}
+
+
+
+
+
+
+.innerwall6 {
+    height: 10vh;
+    width:100%;
+    background-color: white;
+    border-bottom-right-radius:10px ;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    font-family: Roboto,Jost;
+
+}
+
+.innerwall6>button{
+    height: 50%;
+    width: 50%;
+    border: none;
+    background-color: #f06312;
+    color: white;
+    border-radius: 10px;
+    font-size: medium;
+
+}
+
+.bottom{
+    width: 30%;
+}
