@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="/wallet.css">
+   <link rel="stylesheet" href="/Card-Link.css">
     <link rel="stylesheet" href="/walletbox.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@
         <!-- </div> -->
 
         <div class="nav-2">
-            <p>Shop At <a class="nav-2-href" href="/index.html">ShopEasy Store</a></p>
+            <p>Shop At <a class="nav-2-href" href="index.html">ShopEasy Store</a></p>
             <div class="nav-2-logo">
                 <img src="/images/Shop Easy logo.png" alt="">
                 <p class="nav-2-href2">Shop Easy</p>
@@ -33,10 +33,10 @@
             <div class="input-cont">
                 <div class="input">
                     <img src="/images/search-icon.png" alt="">
-                    <input class="search-bar" placeholder="Search products, brands & categories..." type="text">
+                    <input id="input" class="search-bar" placeholder="Search products, brands & categories..." type="text">
                 </div>
     
-                <button class='top-search-btn'>Search</button>
+                <button id="btn" onclick="searchProduct()" class='top-search-btn'>Search</button>
             </div>
 
             <div class="top-menu">
